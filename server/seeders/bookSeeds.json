@@ -1,0 +1,70 @@
+[{
+  "username": "bookMan",
+  "email": "bookMan@gmail.com",
+  "password": "$2b$10$qoadnD5/ggqagVl3Zt1ZVeG1.geautQ8Uk5vZ3ZI7/qITi7yoFBa.",
+  "savedBooks": [
+    {
+      "authors": [
+        "J. K. Rowling"
+      ],
+      "bookId": "wAdCPgAACAAJ",
+      "title": "Harry Potter and the Philosopher's Stone",
+      "description": "Harry Potter is an ordinary boy who lives in a cupboard under the stairs at his Aunt Petunia and Uncle Vernon's house, which he thinks is normal for someone like him who's parents have been killed in a 'car crash'. He is bullied by them and his fat, spoilt cousin Dudley, and lives a very unremarkable life with only the odd hiccup (like his hair growing back overnight!) to cause him much to think about. That is until an owl turns up with a letter addressed to Harry and all hell breaks loose! He is literally rescued by a world where nothing is as it seems and magic lessons are the order of the day. Read and find out how Harry discovers his true heritage at Hogwarts School of Wizardry and Witchcraft, the reason behind his parents mysterious death, who is out to kill him, and how he uncovers the most amazing secret of all time, the fabled Philosopher's Stone! All this and muggles too. Now, what are they?",
+      "image": "http://books.google.com/books/content?id=wAdCPgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    {
+      "authors": [
+        "Warner Bros."
+      ],
+      "bookId": "VLWIMAEACAAJ",
+      "title": "Harry Potter Film Wizardry",
+      "description": "Immerse yourself in the world of the spectacular Harry Potter film series, and learn why Yule Ball ice sculptures never melt, where Galleons, Sickles and Knuts are really \"minted\", how to get a Hippogriff to work with actors, about the inspiration behind Hogwarts castle, and why Dementors move the way they do. Written and designed in collaboration with the cast and crew that brought J.K Rowling's celebrated novels to the silver screen, Harry Potter: Film Wizardry delivers an enchanting interactive experience, transporting readers to the wizarding world by sharing filmmaking secrets, unpublished photography and artwork, and exclusive stories from the stars. Full of removable, facsimile reproductions of props and paper ephemera from the movies, this collectible volume offers a privileged look at the Harry Potter films and the talented group of Muggles that has made true movie magic.",
+      "image": "http://books.google.com/books/content?id=VLWIMAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    {
+      "authors": [
+        "Monique Peterson"
+      ],
+      "bookId": "968eEAAAQBAJ",
+      "title": "Harry Potter: The Wand Collection (Book)",
+      "description": "Discover the wands of your favorite Harry Potter characters. In the Harry Potter films, each wand is as unique as the witch or wizard who wields it. From Hermione Granger’s elegant, vine-wrapped wand to the bone-inlaid wands of the Death Eaters, each was designed and crafted by the filmmakers to reflect its owner’s identity. Harry Potter: The Wand Collection is a visual guide to these magical wands, their makers, and the characters who mastered them. Profiles of each wand feature stunning new photography of the original props, wand statistics, insights from the cast and crew, and other filmmaking secrets from the Warner Bros. archive. This collectible volume is an ideal resource for both wand-wielding veteran fans seeking to learn the history behind these beloved items and a new generation just beginning their journey into the wizarding world.",
+      "image": "http://books.google.com/books/content?id=968eEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    {
+      "authors": [
+        "J.K. Rowling"
+      ],
+      "bookId": "f280CwAAQBAJ",
+      "title": "Harry Potter: The Complete Collection (1-7)",
+      "description": "When Harry Potter is left on a doorstep as a baby, he has no idea he is the Boy Who Lived, or that he is famous throughout the wizarding world. Years later, he is astonished to receive an acceptance letter to Hogwarts School of Witchcraft and Wizardry and he is soon whisked off on a magical adventure like no other. Join Harry and his fiercely loyal friends, Hermione and Ron, in this story about the power of truth, love and hope. Having become classics of our time, the Harry Potter eBooks never fail to bring comfort and escapism. With their message of hope, belonging and the enduring power of truth and love, the story of the Boy Who Lived continues to delight generations of new readers.",
+      "image": "http://books.google.com/books/content?id=f280CwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    {
+      "authors": [
+        "Inc. Scholastic"
+      ],
+      "bookId": "lMM4jgEACAAJ",
+      "title": "Harry Potter Coloring Book",
+      "description": "Packed with stunning pieces of artwork from the Warner Bros. archive, this deluxe coloring book gives fans the chance to color in the vivid settings and beloved characters of J.K. Rowling's wizarding world. Containing intricate line drawings used in the making of the Harry Potter films, this coloring book includes fan-favorite scenes, creatures, and characters: from Dobby and baby Norbert to Quidditch games and the unforgettable final battle between Harry and Lord Voldemort. Unique and interactive, Harry Potter: The Official Coloring Book is a perfect collector's item for all fans of the blockbuster saga--whether it's for those who grew up with Harry, Ron, and Hermione, or those who are discovering the magic for the very first time.",
+      "image": "http://books.google.com/books/content?id=lMM4jgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    {
+      "authors": [
+        "Insight Editions"
+      ],
+      "bookId": "1a8eEAAAQBAJ",
+      "title": "Harry Potter: The Broom Collection",
+      "description": "Discover the brooms of the Wizarding World in this gorgeous sequel to the best-selling Harry Potter: The Wand Collection. Every broom has a story of its own. In the Harry Potter films, wizarding broomsticks are magical artifacts that enable their riders to soar from one place to another. They can be used to dodge dragons, escape Death Eaters and other Dark forces, or take to the skies for an action-packed Quidditch match. Harry Potter: The Broom Collection is a visual guide to these magical artifacts, their makers, and their riders. Profiles of each broom feature stunning new illustrations of the original props, insights from cast and crew, and other filmmaking secrets from the Warner Bros. archive. Also included are fascinating entries on Quidditch, illustrated with prop photography and concept art, with profiles on everything from the Golden Snitch to the Quidditch World Cup. This collectible volume is an ideal resource, both for veteran fans seeking to learn the history behind these beloved items and for a new generation just beginning their journey into the wizarding world.",
+      "image": "http://books.google.com/books/content?id=1a8eEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    {
+      "authors": [
+        "Neil Mulholland"
+      ],
+      "bookId": "L18VBQAAQBAJ",
+      "title": "The Psychology of Harry Potter",
+      "description": "Harry Potter has provided a portal to the wizarding world for millions of readers, but an examination of Harry, his friends and his enemies will take us on yet another journey: through the psyche of the Muggle (and wizard!) mind. The twists and turns of the series, as well as the psychological depth and complexity of J. K. Rowling’s characters, have kept fans enthralled with and puzzling over the many mysteries that permeate Hogwarts and beyond: • Do the Harry Potter books encourage disobedience? • Why is everyone so fascinated by Professor Lupin? • What exactly will Harry and his friends do when they finally pass those N.E.W.T.s? • Do even wizards live by the ticking of the clock? • Is Harry destined to end up alone? And why did it take Ron and Hermione so long to get together? Now, in The Psychology of Harry Potter, leading psychologists delve into the ultimate Chamber of Secrets, analyzing human mind and motivation by examining the themes and characters that make the Harry Potter books the bestselling fantasy series of all time. Grab a spot on the nearest couch, and settle in for some fresh revelations about our favorite young wizard!",
+      "image": "http://books.google.com/books/content?id=L18VBQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    }
+  ]
+}]

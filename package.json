@@ -1,0 +1,23 @@
+{
+  "name": "mern-google-book-search",
+  "version": "1.0.0",
+  "description": "An application designed using the MERN stack concept for users to easily search for their favorite books.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "node server/seeders/seed.js",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AASports89/mern-google-book-search"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.2.0"
+  }
+}

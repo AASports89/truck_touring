@@ -1,0 +1,17 @@
+[
+  {
+    "username": "BookMan",
+    "email": "bookman@gmail.com",
+    "password": "password01"
+  },
+  {
+    "username": "AvidReader",
+    "email": "avidreader@gmail.com",
+    "password": "password02"
+  },
+  {
+    "username": "ReadGod",
+    "email": "readgod@gmail.com",
+    "password": "password03"
+  }
+]
