@@ -1,91 +1,60 @@
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/Container';
-import Modal from 'react-bootstrap/Modal';
-import Tab from 'react-bootstrap/Tab';
-import SignUpForm from './SignupForm';
-import LoginForm from './LoginForm';
+import React, {useEffect} from "react";
+import { Link } from 'react-router-dom';
+import Aos from "aos";
 
 import Auth from '../utils/auth';
 
-const AppNavbar = () => {
-  // set modal display state
-  const [showModal, setShowModal] = useState(false);
+const Navbar = () => {
+  useEffect(() => {
+		Aos.init({duration:2000});
+		window.addEventListener("scroll", () => {
+		});
+	}, [])
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
 
   return (
-    <>
-      <Navbar id="navi" bg="dark" variant="dark" expand="lg">
-        <Container>
-          <Navbar.Brand as={Link} to="/">
-            <img id="google"
-              src="https://res.cloudinary.com/dhqsixgmo/image/upload/v1667893491/Google_Books_logo2_w3ocjs.webp"
-              alt="Google Books Search"
-            ></img>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbar" />
-          <Navbar.Collapse id="navbar">
-            <Nav id="nav-link" className="ml-auto">
-              <NavLink id="btn5" as={Link} to="/">
-                Search Books 🔍
-              </NavLink>
-              {/* if user is logged in show saved books and logout */}
-              {Auth.loggedIn() ? (
-                <>
-                  <NavLink id="btn5" as={Link} to="/saved">
-                    View Books 🔎
-                  </NavLink>
-                  <NavLink id="btn5" onClick={Auth.logout}>
-                    Logout 🚫
-                  </NavLink>
-                </>
-              ) : (
-                <NavLink id="btn6" onClick={() => setShowModal(true)}>
-                  Login 📡/Sign Up 🔏
-                </NavLink>
-              )}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      {/* set modal data up */}
-      <Modal
-        size="lg"
-        show={showModal}
-        onHide={() => setShowModal(false)}
-        aria-labelledby="signup-modal"
-      >
-        {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey="login">
-          <Modal.Header closeButton>
-            <Modal.Title id="signup-modal">
-              <Nav id="nav" variant="pills">
-                <Nav.Item id="btn9">
-                  <Nav.Link Style={"color: whitesmoke; background-image: linear-gradient(rgb(126, 153, 251) 0%, rgb(6, 6, 129) 100%); border-radius: 1em; font-size: 80%"} eventKey="login">Login 📡</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <button id="btn8">
-                  <Nav.Link eventKey="signup">Sign Up 🔏</Nav.Link>
-                  </button>
-                </Nav.Item>
-              </Nav>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Tab.Content>
-              <Tab.Pane eventKey="login">
-                <LoginForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-              <Tab.Pane eventKey="signup">
-                <SignUpForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-            </Tab.Content>
-          </Modal.Body>
-        </Tab.Container>
-      </Modal>
-    </>
+      <nav id="navbar" className="navbar navbar-expand-lg navbar-light bg-light">
+      <h1 id="main-title"> 🏈⚽<img id="parlay" src="https://res.cloudinary.com/dhqsixgmo/image/upload/v1667008558/cooltext422338805357325_qvpd09.png" alt="Parlay Anytime"></img>🏀⚾ </h1>
+        <Link className="text-light" to="/">
+            <h1 id="title"><img id="build" src="https://res.cloudinary.com/dhqsixgmo/image/upload/v1666898132/cooltext422262976759629_qb9ewg.png" alt="Build A Bet"></img>🎲</h1>
+          </Link>
+          <div className="row" id="links">
+          {Auth.loggedIn() ? (
+            <>
+            <Link className="btn" to="/me">
+                {Auth.getProfile().data.username}'s Dashboard 🎛️
+            </Link>
+              <Link to="/parlays">
+              <button className="btn" to="/parlays">
+              Parlays 🤑
+            </button>
+              </Link>
+            <button className="btn" onClick={logout}>
+                Logout 📴
+            </button>
+              {/* <div id="user-image" className="card-img-top"><img src={image.user} alt="profile"></img></div> */}
+            </>
+          ) : (
+            <>
+            <Link className="btn" to="/">
+                Games 🏟️
+            </Link>
+          
+            <Link className="btn" to="/login">
+                Login 📡
+            </Link>
+            
+            <Link className="btn" to="/signup">
+                Sign Up 🎰
+            </Link>
+            </>
+          )}
+          </div>
+    </nav>
   );
 };
 
-export default AppNavbar;
+export default Navbar;

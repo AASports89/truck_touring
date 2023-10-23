@@ -1,0 +1,37 @@
+[
+{
+    "username": "CrazyFan23",
+  "name": "Bye bye mortgage",
+  "win_choice": [0,1]
+ },
+ {
+    "username": "DaJinx00",
+  "name": "I sold my liver for this",
+  "win_choice": [0,0]
+ },
+ {
+    "username": "CrazyFan23",
+  "name": "Going to be living in a card-board box",
+  "win_choice": [0,1,0]
+ },
+ {
+  "username": "DaJinx00",
+"name": "Daddy needs a new pair of...",
+"win_choice": [0]
+},
+{
+  "username": "NoWin4Me",
+"name": "NO CHANCE!!",
+"win_choice": [0,1,1]
+},
+{
+  "username": "Lose2Win",
+"name": "There is NO tomorrow!",
+"win_choice": [1,1]
+},
+{
+  "username": "Lose2Win",
+"name": "Sleeping under the bridge!",
+"win_choice": [0,1,0,0,1]
+}
+]

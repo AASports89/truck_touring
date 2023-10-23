@@ -1,17 +1,30 @@
 [
   {
-    "username": "BookMan",
-    "email": "bookman@gmail.com",
-    "password": "password01"
+    "username": "CrazyFan23",
+    "email": "admin1@gmail.com",
+    "password": "password01",
+    "wins":["200, 2000, 300, 550, 700, 1200, 2000"],
+    "losses": ["-200, -2000, -300, -550, -700, -1200, -2000"]
   },
   {
-    "username": "AvidReader",
-    "email": "avidreader@gmail.com",
-    "password": "password02"
+    "username": "DaJinx00",
+    "email": "admin2@gmail.com",
+    "password": "password02",
+    "wins":["200, 2000, 300, 550, 700, 1200, 2000"],
+    "losses": ["-200, -2000, -300, -550, -700, -1200, -2000"]
   },
   {
-    "username": "ReadGod",
-    "email": "readgod@gmail.com",
-    "password": "password03"
+    "username": "NoWin4Me",
+    "email": "admin3@gmail.com",
+    "password": "password03",
+    "wins":["200, 2000, 300, 550, 700, 1200, 2000"],
+    "losses": ["-200, -2000, -300, -550, -700, -1200, -2000"]
+  },
+  {
+    "username": "Lose2Win",
+    "email": "admin4@gmail.com",
+    "password": "password04",
+    "wins":["200, 2000, 300, 550, 700, 1200, 2000"],
+    "losses": ["-200, -2000, -300, -550, -700, -1200, -2000"]
   }
 ]

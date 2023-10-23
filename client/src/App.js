@@ -7,10 +7,17 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SearchBooks from './pages/SearchBooks';
-import SavedBooks from './pages/SavedBooks';
-import AppNavbar from './components/Navbar';
-import './index.scss';
+
+import Home from './pages/Home';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import SingleParlay from './pages/SingleParlay';
+import Dashboard from './pages/Dashboard';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import GameList from './components/GameList';
+import Parlays from './pages/Parlays';
+import ParlayForm from './components/ParlayForm';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -38,26 +45,56 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider client = {client}>
-    <Router>
-      <>
-      <AppNavbar />
-        <Routes>
-          <Route 
-            path='/' 
-            element={<SearchBooks />} 
-          />
-          <Route 
-            path='/saved' 
-            element={<SavedBooks />} 
-          />
-          <Route 
-            path='*'
-            element={<h1 className='display-2'>Error❗⛔ Invalid Request❗⛔ Wrong Page❗🚫</h1>}
-          />
-        </Routes>
-      </>
-    </Router>
+    <ApolloProvider client={client}>
+      <Router>
+      <header>
+      <Navbar />
+      </header>
+        <div className="flex-column justify-flex-start min-100-vh">
+          <div className="container">
+            <Routes>
+           
+              <Route 
+                path="/"
+                element={<Home />}
+              />
+               <Route 
+                path="/" 
+                element={<GameList />}
+              />
+              <Route 
+                path="/ParlayFrom" 
+                element={<ParlayForm />}
+              />
+              <Route 
+                path="/parlays" 
+                element={<Parlays />}
+              />
+              <Route 
+                path="/login" 
+                element={<Login />}
+              />
+              <Route 
+                path="/signup" 
+                element={<Signup />}
+              />
+              <Route 
+                path="/me" 
+                element={<Dashboard />}
+              />
+              <Route 
+                path="/profiles/:username" 
+                element={<Dashboard />}
+              />
+              <Route 
+                path="/parlays/:parlayId" 
+                element={<SingleParlay />}
+              />
+            </Routes>
+          </div>
+          <Footer />
+        </div>
+      </Router>
     </ApolloProvider>
   );
 }

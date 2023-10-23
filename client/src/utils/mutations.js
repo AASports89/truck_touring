@@ -24,37 +24,32 @@ export const ADD_USER = gql`
   }
 `;
 
-export const SAVE_BOOK = gql`
-  mutation saveBook($book: String!) {
-    saveBook(book: $book) {
-      username
-      email
-      bookCount
-      savedBooks {
-        authors
-        description
-        bookId
-        image
-        link
-        title
+export const ADD_PARLAY = gql`
+  mutation addParlay($parlayId: ID!) {
+    addParlay(parlayId: $parlayId) {
+      _id
+      win_choice
+      createdAt
+       game {
+        _id
+        homeTeam
+        awayTeam
+        homeOdd
+        awayOdd
       }
     }
   }
 `;
 
-export const REMOVE_BOOK = gql`
-  mutation removeBook($bookId: String!) {
-    removeBook(bookId: $bookId) {
-      username
-      email
-      bookCount
-      savedBooks {
-        authors
-        description
-        bookId
-        image
-        link
-        title
+export const ADD_GAME = gql`
+  mutation addGame ($parlayId: ID!, $homeTeam: String!, $awayTeam: String!, $homeOdd: Int!, $awayOdd: Int!) {
+    addGame(parlayId: $parlayId, homeTeam: $homeTeam, awayTeam: $awayTeam, homeOdd: $homeOdd, awayOdd: $awayOdd) {
+      games {
+        _id
+        homeTeam
+        awayTeam
+        homeOdd
+        awayOdd
       }
     }
   }
