@@ -2,7 +2,6 @@
   {
     "username": "admin",
     "email": "admin@gmail.com",
-    "password": "password123",
-    "reservations":["10/23/2022, 10/01/2023, 11/11/2023"]
+    "password": "password123"
   }
 ]

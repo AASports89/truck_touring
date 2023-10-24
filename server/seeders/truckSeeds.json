@@ -1,0 +1,22 @@
+[
+    {
+        "truckModel": "Volvo Pilisos V6000",
+        "rentalPrice": 99.99
+    },
+    {
+        "truckModel": "PeterBilt Aziz X1",
+        "rentalPrice": 1250.00
+    },
+    {
+        "truckModel": "WestTrux ZeeBeelCheek 4000",
+        "rentalPrice": 499.99
+    },
+    {
+        "truckModel": "Suzuki Dumpster XS",
+        "rentalPrice": "0.00"
+    },
+    {
+        "truckModel": "Mercedes ZigHeil",
+        "rentalPrice": 399.99
+    }
+]

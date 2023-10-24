@@ -15,7 +15,7 @@ import SingleReservation from './pages/SingleReservation';
 import Dashboard from './pages/Dashboard';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import TruckList from './components/TruckList';
+// import TruckList from './components/TruckList';
 import Reservations from './pages/Reservations';
 import ReservationForm from './components/ReservationForm';
 
@@ -58,10 +58,10 @@ function App() {
                 path="/"
                 element={<Home />}
               />
-               <Route 
-                path="/" 
+               {/* <Route 
+                path="/TruckList" 
                 element={<TruckList />}
-              />
+              /> */}
               <Route 
                 path="/ReservationForm" 
                 element={<ReservationForm />}

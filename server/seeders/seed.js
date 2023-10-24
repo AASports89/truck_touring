@@ -2,18 +2,12 @@ const db = require('../config/connection');
 const { User, Rservation, Truck } = require('../models');
 const userSeeds = require('./userSeeds.json');
 const reservationSeeds = require('./reservationDates.json');
-const truckSeeds = require('./trucks.json');
+const truckSeeds = require('./truckSeeds.json');
 
-const reformattedGames = truckSeeds.map(element => {
+const reformattedTrucks = truckSeeds.map(element => {
 
-  const truck_model = element.truck_model;
-  let rental_price;
-
-  const outcomes = element.trucks[0].outcomes;
-
-  if(outcomes[0].name === truck_model) {
-    rental_price = outcomes[0].price;
-  }
+  const truck_model = element.truckModel;
+  const rental_price = element.rentalPrice;
 
   const truckObj = {
     truckModel: truck_model,
@@ -26,11 +20,11 @@ const reformattedGames = truckSeeds.map(element => {
 db.once('open', async () => {
   
     await User.deleteMany({});
-    await Reservation.deleteMany({});
+    // await Reservation.deleteMany({});
     await Truck.deleteMany({});
   
   const users = await User.create(userSeeds);
-  const reservations = await Reservation.insertMany(reservationSeeds);
+  // const reservations = await Reservation.insertMany(reservationSeeds);
   const trucks = await Truck.insertMany(reformattedTrucks);
 
   console.log(trucks);

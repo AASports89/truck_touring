@@ -1,37 +1,32 @@
 [
-{
-    "username": "CrazyFan23",
+  {
+  "username": "admin",
   "name": "Bye bye mortgage",
-  "win_choice": [0,1]
- },
- {
-    "username": "DaJinx00",
-  "name": "I sold my liver for this",
-  "win_choice": [0,0]
- },
- {
-    "username": "CrazyFan23",
-  "name": "Going to be living in a card-board box",
-  "win_choice": [0,1,0]
- },
- {
-  "username": "DaJinx00",
-"name": "Daddy needs a new pair of...",
-"win_choice": [0]
-},
-{
-  "username": "NoWin4Me",
-"name": "NO CHANCE!!",
-"win_choice": [0,1,1]
-},
-{
-  "username": "Lose2Win",
-"name": "There is NO tomorrow!",
-"win_choice": [1,1]
-},
-{
-  "username": "Lose2Win",
-"name": "Sleeping under the bridge!",
-"win_choice": [0,1,0,0,1]
-}
+  "win_choice": [0,1],
+  "date": "2023-09-26"
+  },
+  {
+  "username": "admin",
+  "name": "Bundy's Carpet Service",
+  "win_choice": [0,0],
+  "date": "2023-10-26"
+  },
+  {
+    "username": "admin",
+    "name": "Pilisos Delivery Service",
+    "win_choice": [0,1,0],
+    "date": "2023-08-15"
+  },
+  {
+  "username": "admin",
+  "name": "Hauling Away Human ZeeBeel",
+  "win_choice": [0],
+  "date": "2023-10-01"
+  },
+  {
+  "username": "admin",
+  "name": "NO CHANCE!!",
+  "win_choice": [0,1,1],
+  "date": "2023-08-26"
+  }
 ]
