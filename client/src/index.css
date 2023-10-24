@@ -1377,6 +1377,17 @@ label form [type='radio'] {
 #action-div {
  padding-top: 20%;
 }
+ #error_icon {
+  color: red;
+ }
+
+ #success {
+  color: green;
+ }
+
+ #cal_success {
+  color: green;
+ }
 
 #parlay-title {
   background-image: linear-gradient(rgb(126, 153, 251) 0%, rgb(6, 6, 129) 100%);

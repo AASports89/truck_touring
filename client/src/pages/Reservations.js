@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { FontAwesomeIcon } from 'react';
 import { useQuery } from '@apollo/client';
 
-import { QUERY_PARLAYS } from '../utils/queries';
+import { QUERY_RESERVATIONS } from '../utils/queries';
 
 var date = (new Date()).toString().split(' ').splice(1,3).join(' ');
 document.write(date);
 
 const Parlays = () => {
 
-  const { loading, data } = useQuery(QUERY_PARLAYS);
-  const parlays = data?.parlays || [];
-  if (!parlays.length) {
-    return <h3>Where is the action❗❓</h3>;
+  const { loading, data } = useQuery(QUERY_RESERVATIONS);
+  const reservations = data?.reservations || [];
+  if (!reservations.length) {
+    return <h3></h3>;
   }
-console.log(parlays);
+console.log(reservations);
 
 // const { username } = useParams();
 // const { loading, data } = useQuery(username ? QUERY_USER : QUERY_ME, QUERY_PARLAYS, {
@@ -50,16 +50,17 @@ console.log(parlays);
       <div className="flex-row justify-center" id="parlaying">
         <div className="flex-row justify-center">
           <h5 id="par-title">
-          Parlays for: {date} 📋
+          Reservations for: {date} <FontAwesomeIcon id="cal_success" icon="fa-solid fa-calendar-check" />
           </h5>
           </div>
-        {parlays && parlays.map((parlay) => (
-        <div key={parlay._id} className="card mb-3" id="game-cardss">
-              <p className="card-body">{parlay.name}</p>
-              <p className="card-body"> Ticket Code: [{parlay.win_choice}]</p>
-              {parlay.games && parlay.games.map((game)=> (
-                <div key={game._id}>
-                  <p>{game.homeTeam} vs {game.awayTeam}</p>
+        {reservations && reservations.map((reservation) => (
+        <div key={reservation._id} className="card mb-3" id="game-cardss">
+              <p className="card-body">{reservation.name}</p>
+              <p className="card-body"> Reservation Confirmation: [{reservation.win_choice}]</p>
+              {reservation.trucks && reservation.trucks.map((truck)=> (
+                <div key={truck._id}>
+                  <p>{truck.truckModel}</p>
+                  <p>{truck.rentalPrice}</p>
                 </div>
               ))}
             </div>

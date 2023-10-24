@@ -1,62 +1,55 @@
 const db = require('../config/connection');
-const { User, Parlay, Game } = require('../models');
+const { User, Rservation, Truck } = require('../models');
 const userSeeds = require('./userSeeds.json');
-const parlaySeeds = require('./parlayBets.json');
-const gameSeeds = require('./games.json');
+const reservationSeeds = require('./reservationDates.json');
+const truckSeeds = require('./trucks.json');
 
-const reformattedGames = gameSeeds.map(element => {
+const reformattedGames = truckSeeds.map(element => {
 
-  const home_team = element.home_team;
-  const away_team = element.away_team;
-  let home_odd;
-  let away_odd;
-  const outcomes = element.bookmakers[0].markets[0].outcomes;
+  const truck_model = element.truck_model;
+  let rental_price;
 
-  if(outcomes[0].name === home_team) {
-    home_odd = outcomes[0].price;
-    away_odd = outcomes[1].price;
-  } else {
-    home_odd = outcomes[1].price;
-    away_odd = outcomes[0].price;
+  const outcomes = element.trucks[0].outcomes;
+
+  if(outcomes[0].name === truck_model) {
+    rental_price = outcomes[0].price;
   }
 
-  const gameObj = {
-    homeTeam: home_team,
-    awayTeam: away_team,
-    homeOdd: home_odd,
-    awayOdd: away_odd
+  const truckObj = {
+    truckModel: truck_model,
+    rentalPrice: rental_price
   }
 
-  return gameObj;
+  return truckObj;
 });
 
 db.once('open', async () => {
   
     await User.deleteMany({});
-    await Parlay.deleteMany({});
-    await Game.deleteMany({});
+    await Reservation.deleteMany({});
+    await Truck.deleteMany({});
   
   const users = await User.create(userSeeds);
-  const parlays = await Parlay.insertMany(parlaySeeds);
-  const games = await Game.insertMany(reformattedGames);
+  const reservations = await Reservation.insertMany(reservationSeeds);
+  const trucks = await Truck.insertMany(reformattedTrucks);
 
-  console.log(games);
+  console.log(trucks);
 
-  for (let i = 0; i < parlaySeeds.length; i++) {
-    const { _id, username } = await Parlay.create(parlaySeeds[i]);
+  for (let i = 0; i < reservationSeeds.length; i++) {
+    const { _id, username } = await Reservation.create(reservationSeeds[i]);
     const user = await User.findOneAndUpdate(
       { username: username },
       {
         $addToSet: {
-          parlays: _id,
+          reservations: _id,
         },
       }
     );
   }
 
-  for(newParlay of parlays) {
+  for(newReservation of reservations) {
     const tempUser = users[Math.floor(Math.random() * users.length)];
-    tempUser.parlays.push(newParlay._id);
+    tempUser.reservations.push(newReservation._id);
     await tempUser.save();
 
     let usedNums = [];
@@ -64,12 +57,12 @@ db.once('open', async () => {
     while(count < 5){
       let rand = Math.floor(Math.random()*games.length);
       if(usedNums.indexOf(rand) === -1) {
-        newParlay.games.push(games[rand]._id);
+        newReservation.trucks.push(trucks[rand]._id);
         usedNums.push(rand);
         count++;
       }
     }
-    await newParlay.save();
+    await newReservation.save();
   }
 
   console.log('Success ✅ Seeds planted 🎄');

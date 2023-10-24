@@ -1,34 +1,34 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Game, Parlay } = require('../models');
+const { User, Truck, Reservation } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
 //PULL MODEL DATA//
   Query: {
     users: async () => {
-      return User.find().populate('parlays');
+      return User.find().populate('reservations');
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('parlays');
+      return User.findOne({ username }).populate('reservations');
     },
-    parlays: async (parent, { username }) => {
+    reservations: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Parlay.find(params).sort({ createdAt: -1 }).populate('games');
+      return Reservation.find(params).sort({ createdAt: -1 }).populate('trucks');
     },
-    parlay: async (parent, { parlayId }) => {
-      return Parlay.findOne({ _id: parlayId });
+    reservation: async (parent, { reservationId }) => {
+      return Reservation.findOne({ _id: reservationId });
     },
-    games: async () => {
-      return Game.find();
+    trucks: async () => {
+      return Truck.find();
     },
-    game: async (parent, args) => {
-      return Game.findById(args.gameId);
+    truck: async (parent, args) => {
+      return Truck.findById(args.truckId);
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate("parlays");
+        return User.findOne({ _id: context.user._id }).populate("reservations");
       }
-      throw new AuthenticationError("Please login❗⛔");
+      throw new AuthenticationError("Please login❗ " + <i id="error_icon" class="fa-solid fa-circle-exclamation"></i>);
     },
   },
 //CHANGE MODEL DATA//
@@ -43,47 +43,48 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('Error❗⛔ No user found with this login❗⛔');
+        throw new AuthenticationError('No user found with this login❗ ' + <i id="error_icon" class="fa-solid fa-circle-exclamation"></i>);
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Error❗⛔ Invalid login credentials❗⛔');
+        throw new AuthenticationError('Invalid login credentials❗' + <i id="error_icon" class="fa-solid fa-circle-exclamation"></i>);
       }
 
       const token = signToken(user);
 
       return { token, user };
     },
-//ADD PARLAY//
-    addParlay: async (parent, { win_choice }, context) => {
+//ADD RESERVATION//
+    addReservation: async (parent, { date, win_choice }, context) => {
       if(context.user) {
-        const parlay = await Parlay.create({ 
+        const reservation = await Reservation.create({
+          date, 
           win_choice,
           username: context.user.username,
         });
 
       await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { parlays: parlay._id, username: context.user.username } },
+          { $addToSet: { reservations: reservation._id, username: context.user.username } },
           {
             new: true,
             runValidators: true,
           }
         );
-        return parlay;
+        return reservation;
       }
-      throw new AuthenticationError("Error❗⛔ Please login to set parlay❗⛔");
+      throw new AuthenticationError("Please login to create reservation request❗" + <i id="error_icon" class="fa-solid fa-circle-exclamation"></i>);
     },
-//ADD GAME//
-    addGame: async (parent, { parlayId, homeTeam, awayTeam, homeOdd, awayOdd }, context) => {
+//ADD TRUCK//
+    addTruck: async (parent, { reservationId, truckModel, rentalPrice }, context) => {
       if (context.user) {
-        return Parlay.findOneAndUpdate(
-          { _id: parlayId },
+        return Reservation.findOneAndUpdate(
+          { _id: reservationId },
           {
             $addToSet: {
-              games: { homeTeam, awayTeam, homeOdd, awayOdd, username: context.user.username },
+              trucks: { truckModel, rentalPrice, username: context.user.username },
             },
           },
           {
@@ -92,32 +93,32 @@ const resolvers = {
           }
         );
       }
-      throw new AuthenticationError("Error❗⛔ Please login to set parlay❗⛔");
+      throw new AuthenticationError("Please login to create reservation request❗ " + <i id="error_icon" class="fa-solid fa-circle-exclamation"></i>);
     },
-//DELETE PARLAY//
-    removeParlay: async (parent, { parlayId }, context) => {
+//DELETE RESERVATION//
+    removeReservation: async (parent, { reservationId }, context) => {
       if(context.user) {
-        const parlay = await Parlay.findOneAndDelete({
-          _id: parlayId,
+        const reservation = await Reservation.findOneAndDelete({
+          _id: reservationId,
           username: context.user.username,
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { parlays: parlay._id }}
+          { $pull: { reservations: reservation._id }}
         );
-        return parlay;
+        return reservation;
       }
-      throw new AuthenticationError("Error❗⛔ Please login to delete parlay❗⛔");
+      throw new AuthenticationError("Please login to delete reservation request❗ " + <i id="error_icon" class="fa-solid fa-circle-exclamation"></i>);
     },
-//DELETE GAME//
-    removeGame: async (parent, { parlayId, gameId }, context) => {
+//DELETE TRUCK//
+    removeTruck: async (parent, { reservationId, truckId }, context) => {
       if (context.user) {
-        return Parlay.findOneAndUpdate(
-          { _id: parlayId },
+        return Reservation.findOneAndUpdate(
+          { _id: reservationId },
           {$pull: {
-            games: {
-              _id: gameId,
+            trucks: {
+              _id: truckId,
               username: context.user.username,
             },
           },
@@ -125,7 +126,7 @@ const resolvers = {
         { new: true }
         );
       }
-      throw new AuthenticationError("Error❗⛔ Please login to set parlay❗⛔");
+      throw new AuthenticationError("Please login to update reservation request❗ " + <i id="error_icon" class="fa-solid fa-circle-exclamation"></i>);
     },
   },
 };

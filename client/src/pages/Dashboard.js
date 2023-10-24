@@ -1,12 +1,13 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import ParlayList from '../components/ParlayList';
-import ParlayForm from '../components/ParlayForm';
-import { QUERY_PARLAYS } from '../utils/queries';
+import ReservationList from '../components/ReservationList';
+import ReservationForm from '../components/ReservationForm';
+import { QUERY_RESERVATIONS } from '../utils/queries';
 
 const Dashboard = () => {
-  const { loading, data } = useQuery(QUERY_PARLAYS);
-  const parlays = data?.parlays || [];
+  const { loading, data } = useQuery(QUERY_RESERVATIONS);
+  const reservations = data?.reservations || [];
+  const user = data?.me || data?.user || {};
  
     if (loading) {
       return <div>Loading...💸...</div>;
@@ -18,17 +19,16 @@ const Dashboard = () => {
       <div id="parlay-form"
             className="col-12 col-md-10 mb-3 p-3"
           >
-            <ParlayForm />
+            <ReservationForm />
           </div>
       <div className="flex-row justify-center">
         {loading ? (
           <div>Loading...💸...</div>
           ) : (
-        <ParlayList 
-        parlays={parlays}
-        title="Winner...Winner 💰...Chicken...Dinner 🐔"
+        <ReservationList 
+        reservations={reservations}
+        title= {user.username +'s' + " Reservations"}
         />
-        
         )}
         </div>
         </div>

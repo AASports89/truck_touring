@@ -6,23 +6,22 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    parlays: [Parlay]!
+    reservations: [Reservation]!
   }
 
-  type Parlay {
+  type Reservation {
     _id: ID
     name: String
+    date: Date
     win_choice: [Int]
     createdAt: String
-    games: [Game]!
+    trucks: [Truck]!
   }
 
-  type Game {
+  type Truck {
     _id: ID
-    homeTeam: String
-    awayTeam: String
-    homeOdd: Int
-    awayOdd: Int
+    truckModel: String
+    rentalPrice: Int
   }
 
   type Auth {
@@ -33,20 +32,20 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(username: String!): User
-    parlays(username: String): [Parlay]
-    parlay(parlayId: ID!): Parlay
-    games: [Game]
-    game(gameId: ID!): Game
+    reservations(username: String): [Reservation]
+    reservation(reservationId: ID!): Reservation
+    trucks: [Truck]
+    truck(truckId: ID!): Truck
     me: User
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addParlay(name: String!, win_choice: Int!, game: String!): Parlay
-    addGame(homeTeam: String!, awayTeam: String!, homeOdd: Int!, awayOdd: Int!): Game
-    removeParlay(parlayId: ID!): Parlay
-    removeGame(parlayId: ID!, gameId: ID!): Parlay
+    addReservation(name: String!, date: Date!, win_choice: Int!, truck: String!): Reservation
+    addTruck(truckModel: String!, rentalPrice: Int!): Truck
+    removeReservation(reservationId: ID!): Reservation
+    removeTruck(reservationId: ID!, truckId: ID!): Reservation
   }
 `;
 

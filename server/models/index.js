@@ -1,5 +1,5 @@
 const User = require('./User');
-const Game = require('./Game');
-const Parlay = require('./Parlay');
+const Truck = require('./Truck');
+const Reservation = require('./Reservation');
 
-module.exports = { User, Game, Parlay };
+module.exports = { User, Truck, Reservation };

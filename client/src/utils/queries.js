@@ -6,7 +6,7 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      parlays {
+      reservations {
         _id
         name
         win_choice
@@ -16,47 +16,43 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_PARLAYS = gql`
-  query getParlays {
-    parlays {
+export const QUERY_RESERVATIONS = gql`
+  query getReservations {
+    reservations {
       _id
       name
       win_choice
       createdAt
-      games {
+      trucks {
         _id
-        homeTeam
-        awayTeam
+        truckModel
+        rentalPrice
       }
     }
   }
 `;
 
-export const QUERY_GAMES = gql`
-  query getGames {
-    games {
+export const QUERY_TRUCKS = gql`
+  query getTrucks {
+    trucks {
       _id
-      homeTeam
-      awayTeam
-      homeOdd
-      awayOdd
+      truckModel
+      rentalPrice
     }
   }
 `;
 
-export const QUERY_SINGLE_PARLAY = gql`
-  query getSingleParlay($parlayId: ID!) {
-    parlay(parlayId: $parlayId) {
+export const QUERY_SINGLE_RESERVATION = gql`
+  query getSingleReservation($reservationId: ID!) {
+    reservation(reservationId: $reservationId) {
       _id
       name
       win_choice
       createdAt
-      games {
+      trucks {
         _id
-        homeTeam
-        awayTeam
-        homeOdd
-        awayOdd
+        truckModel
+        rentalPrice
       }
     }
   }
@@ -68,7 +64,7 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      parlays {
+      reservations {
         _id
         name
         win_choice

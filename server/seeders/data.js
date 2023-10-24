@@ -6,35 +6,28 @@ const fs = require('fs');
  * For details, see https://the-odds-api.com/liveapi/guides/v4/#parameters-2
  *
  * @param {string} apiKey Get an API key from https://the-odds-api.com/#get-access
- * @param {string} sportKey For a list of sport keys, see https://the-odds-api.com/sports-odds-data/sports-apis.html
- * @param {string} markets Comma separated list of betting markets. Valid values are h2h, spreads & totals
- * @param {string} regions Comma separated list of bookmaker regions. Valid values are us, uk, eu and au
- * @param {string} oddsFormat Valid values are american and decimal.
- * @param {string} dateFormat Valid values are unix and iso.
+ * @param {string} pick_up_location
+ * @param {string} pickup_date Comma separated list of betting markets. Valid values are h2h, spreads & totals
+ * @param {String} return_date
  * @return {object} A dictionary containing keys for metaData and eventData, each with a value as a 2D array (tabular) for easy output to a spreadsheet. If the request fails, event_data will be null.
  */
-function fetchOdds() {
-  const url = `https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds`;
-  const apiKey = 'fe970a04889edb263786fb7b49842366' // Get an API key from https://the-odds-api.com/#get-access
-  const SPORT_KEYS = ['americanfootball_nfl', 'soccer_epl'] // For a list of sport keys, see https://the-odds-api.com/sports-odds-data/sports-apis.html
-  const markets = 'h2h' // Comma separated list of betting markets. Valid values are h2h, spreads & totals
-  const regions = 'us' // Comma separated list of bookmaker regions. Valid values are us, uk, eu and au
-  const oddsFormat = 'american' // Valid values are american and decimal.
-  const dateFormat = 'iso' // Valid values are unix and iso.
-  const bookmakers = 'fanduel'
-
+function fetchRentals() {
+  const url = `https://sky-scanner3.com/`;
+  const apiKey = '3471971288mshbceadf7913233b2p1d3080jsn2e8e12bbe2ad'; // Get an API key from https://the-odds-api.com/#get-access
+  const pick_up_location = '95565058';
+  const pickup_date = '2023-09-05';
+  const return_date = '2023-10-30';
+  
   axios.get(url, {
     params: {
         apiKey,
-        regions,
-        markets,
-        oddsFormat,
-        dateFormat,
-        bookmakers,
+        pick_up_location,
+        pickup_date,
+        return_date
     }
   })
     .then(response => {
-      fs.writeFile('./server/seeders/games.json', JSON.stringify(response.data), (err) => {
+      fs.writeFile('./server/seeders/trucks.json', JSON.stringify(response.data), (err) => {
         if(err){
           console.log(err);
         }
@@ -50,4 +43,4 @@ function fetchOdds() {
     });
 }
 
-console.log(fetchOdds());
+console.log(fetchRentals());

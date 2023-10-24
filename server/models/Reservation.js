@@ -1,17 +1,17 @@
 const { Schema, model } = require('mongoose');
-const Game = require('./Game');
+const Truck = require('./Truck');
 const dateFormat = require('../utils/dateFormat');
 
-const parlaySchema = new Schema({
-    name: {
-        type: String,
+const reservationSchema = new Schema({
+    date: {
+        type: Date,
         required: true,
         unique: false,
     },
-    games: [
+    trucks: [
         {
             type: Schema.Types.ObjectId,
-            ref: "Game"
+            ref: "Truck"
         },
     ],
     win_choice: [
@@ -27,6 +27,6 @@ const parlaySchema = new Schema({
       },
 });
 
-const Parlay = model('Parlay', parlaySchema);
+const Reservation = model('Reservation', reservationSchema);
 
-module.exports = Parlay;
+module.exports = Reservation;

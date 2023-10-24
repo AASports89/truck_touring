@@ -26,8 +26,8 @@ const Navbar = () => {
             <Link className="btn" to="/me">
                 {Auth.getProfile().data.username}'s Dashboard
             </Link>
-              <Link to="/parlays">
-              <button className="btn" to="/parlays">
+              <Link to="/reservations">
+              <button className="btn" to="/reservations">
               Reservations <i class="fa-regular fa-calendar-check"></i>
             </button>
               </Link>

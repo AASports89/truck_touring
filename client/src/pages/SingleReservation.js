@@ -4,21 +4,21 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import GameList from '../components/GameList';
+import TruckList from '../components/TruckList';
 
 
-import { QUERY_SINGLE_PARLAY } from '../utils/queries';
+import { QUERY_SINGLE_RESERVATION } from '../utils/queries';
 
-const SingleParlay = () => {
+const SingleReservation = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
-  const { parlayId } = useParams();
+  const { reservationId } = useParams();
 
-  const { loading, data } = useQuery(QUERY_SINGLE_PARLAY, {
+  const { loading, data } = useQuery(QUERY_SINGLE_RESERVATION, {
     // pass URL parameter
-    variables: { parlayid: parlayId },
+    variables: { reservationid: reservationId },
   });
 
-  const parlay = data?.parlay || {};
+  const reservation = data?.reservation || {};
 
   if (loading) {
     return <div>💸...💸</div>;
@@ -26,19 +26,19 @@ const SingleParlay = () => {
   return (
     <div className="my-3" id="single-parlay">
       <h3 className="card-header bg-dark text-light" id="single-header">
-        {parlay.username} <br />
-          had this pick on {parlay.createdAt}
+        {reservation.username} <br />
+          had this pick on {reservation.createdAt}
       </h3>
       <div className="bg-light py-4">
         <blockquote
           className="p-4" id="blockquote"
         >
-          {parlay.name}
+          {reservation.name}
         </blockquote>
       </div>
 
       <div className="my-5">
-        <GameList games={parlay.games} />
+        <TruckList trucks={reservation.trucks} />
       </div>
       {/* <div className="m-3 p-4" style={{ border: '2px solid #1a1a1a' }}>
         <GameForm parlayId={parlay._id} />
@@ -47,4 +47,4 @@ const SingleParlay = () => {
   );
 };
 
-export default SingleParlay;
+export default SingleReservation;

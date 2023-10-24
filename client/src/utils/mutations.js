@@ -24,32 +24,28 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_PARLAY = gql`
-  mutation addParlay($parlayId: ID!) {
-    addParlay(parlayId: $parlayId) {
+export const ADD_RESERVATION = gql`
+  mutation addReservation($reservationId: ID!) {
+    addReservation(reservationId: $reservationId) {
       _id
-      win_choice
+      date
       createdAt
-       game {
+       truck {
         _id
-        homeTeam
-        awayTeam
-        homeOdd
-        awayOdd
+        truckModel
+        rentalPrice
       }
     }
   }
 `;
 
-export const ADD_GAME = gql`
-  mutation addGame ($parlayId: ID!, $homeTeam: String!, $awayTeam: String!, $homeOdd: Int!, $awayOdd: Int!) {
-    addGame(parlayId: $parlayId, homeTeam: $homeTeam, awayTeam: $awayTeam, homeOdd: $homeOdd, awayOdd: $awayOdd) {
-      games {
+export const ADD_TRUCK = gql`
+  mutation addTruck ($reservationId: ID!, $truckModel: String!, $rentalPrice: Int!) {
+    addTruck(reservationId: $reservationId, truckModel: $truckModel, rentalPrice: $rentalPrice) {
+      trucks {
         _id
-        homeTeam
-        awayTeam
-        homeOdd
-        awayOdd
+        truckModel
+        rentalPrice
       }
     }
   }

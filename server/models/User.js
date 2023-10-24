@@ -18,23 +18,10 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  wins: [
-    {
-      type: String,
-      required: true,
-    }
-    
-  ],
-  losses: [
-    {
-    type: String,
-    required: true,
-  }
-],
-  parlays: [
+  reservations: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Parlay',
+      ref: 'Reservation',
     }
   ]
 });

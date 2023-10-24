@@ -11,13 +11,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import SingleParlay from './pages/SingleParlay';
+import SingleReservation from './pages/SingleReservation';
 import Dashboard from './pages/Dashboard';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import GameList from './components/GameList';
-import Parlays from './pages/Parlays';
-import ParlayForm from './components/ParlayForm';
+import TruckList from './components/TruckList';
+import Reservations from './pages/Reservations';
+import ReservationForm from './components/ReservationForm';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -60,15 +60,15 @@ function App() {
               />
                <Route 
                 path="/" 
-                element={<GameList />}
+                element={<TruckList />}
               />
               <Route 
-                path="/ParlayFrom" 
-                element={<ParlayForm />}
+                path="/ReservationForm" 
+                element={<ReservationForm />}
               />
               <Route 
-                path="/parlays" 
-                element={<Parlays />}
+                path="/reservations" 
+                element={<Reservations />}
               />
               <Route 
                 path="/login" 
@@ -87,8 +87,8 @@ function App() {
                 element={<Dashboard />}
               />
               <Route 
-                path="/parlays/:parlayId" 
-                element={<SingleParlay />}
+                path="/reservations/:reservationId" 
+                element={<SingleReservation />}
               />
             </Routes>
           </div>
