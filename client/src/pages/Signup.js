@@ -42,7 +42,7 @@ const Signup = () => {
     <main className="flex-row justify-center">
       <div className="col">
         <div className="card">
-          <h4 className="card-header">Sign Up 🎰</h4>
+          <h4 className="card-header">Sign Up <i class="fa-solid fa-user-plus"></i></h4>
           <div className="card-body">
             {data ? (
               <button className='btn' id="btn1">
@@ -88,7 +88,7 @@ const Signup = () => {
                   className="btn"
                   type="submit"
                 >
-                  Submit 📬
+                  Submit <i class="fa-regular fa-paper-plane"></i>
                 </button>
               </form>
             )}

@@ -44,7 +44,7 @@ const Login = (props) => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card" id="log">
-          <h4 id="login" className="card-header">Login 📡</h4>
+          <h4 id="login" className="card-header">Login <i class="fa-solid fa-circle-user"></i></h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -74,7 +74,7 @@ const Login = (props) => {
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
-                  Submit 📬
+                  Submit <i class="fa-regular fa-paper-plane"></i>
                 </button>
               </form>
             )}

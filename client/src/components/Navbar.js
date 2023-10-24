@@ -17,38 +17,37 @@ const Navbar = () => {
 
   return (
       <nav id="navbar" className="navbar navbar-expand-lg navbar-light bg-light">
-      <h1 id="main-title"> 🏈⚽<img id="parlay" src="https://res.cloudinary.com/dhqsixgmo/image/upload/v1667008558/cooltext422338805357325_qvpd09.png" alt="Parlay Anytime"></img>🏀⚾ </h1>
         <Link className="text-light" to="/">
-            <h1 id="title"><img id="build" src="https://res.cloudinary.com/dhqsixgmo/image/upload/v1666898132/cooltext422262976759629_qb9ewg.png" alt="Build A Bet"></img>🎲</h1>
+            <h1 id="title"><img id="build" src="https://res.cloudinary.com/dhqsixgmo/image/upload/v1698109311/TRCUK_TITLE_debvdm.svg" alt="Build A Bet"></img></h1>
           </Link>
           <div className="row" id="links">
           {Auth.loggedIn() ? (
             <>
             <Link className="btn" to="/me">
-                {Auth.getProfile().data.username}'s Dashboard 🎛️
+                {Auth.getProfile().data.username}'s Dashboard
             </Link>
               <Link to="/parlays">
               <button className="btn" to="/parlays">
-              Parlays 🤑
+              Reservations <i class="fa-regular fa-calendar-check"></i>
             </button>
               </Link>
             <button className="btn" onClick={logout}>
-                Logout 📴
+                Logout <i class="fa-solid fa-right-from-bracket"></i>
             </button>
               {/* <div id="user-image" className="card-img-top"><img src={image.user} alt="profile"></img></div> */}
             </>
           ) : (
             <>
             <Link className="btn" to="/">
-                Games 🏟️
+                Trucks  <i id="truck" class="fa-solid fa-truck-fast"></i>
             </Link>
           
             <Link className="btn" to="/login">
-                Login 📡
+                Login <i class="fa-solid fa-circle-user"></i>
             </Link>
             
             <Link className="btn" to="/signup">
-                Sign Up 🎰
+                Sign Up <i class="fa-solid fa-user-plus"></i>
             </Link>
             </>
           )}

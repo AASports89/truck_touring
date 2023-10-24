@@ -21,8 +21,7 @@ function ParlayForm() {
  
 console.log(parlay, games);
 
-const possibleWin = Math.floor(Math.random() * (99 - 70 + 1) + 235.8);
-const ticketId = Math.floor(Math.random() * (15005) + 1);
+const possibleDate = Date;
 
   if (loading) {
     return <div>Loading...💸...</div>;
@@ -45,13 +44,12 @@ const ticketId = Math.floor(Math.random() * (15005) + 1);
   const handleSubmit = event => {
     event.preventDefault();
     alert(`Parlay picks, successfully submitted✅ Good Luck!💰
-            YOUR CURRENT PARLAY TICKET: ID ${ticketId} \n 
             Parlay Code: ${name} \n
             1st Pick: ${homeTeam} \n
             2nd Pick: ${awayTeam} \n
             3rd Pick: ${homeOdd} \n
             4th Pick: ${awayOdd} \n
-            Possible Winnings: ${possibleWin} \n
+            Current Reservation Date: ${possibleDate} \n
             `);
   };
   return (

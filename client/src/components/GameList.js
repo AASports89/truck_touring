@@ -7,7 +7,7 @@ const GameList = () => {
   const { loading, data } = useQuery(QUERY_GAMES);
   const games = data?.games || [];
   if (!games.length) {
-    return <h3>Where is the action❗❓</h3>;
+    return <h3></h3>;
   }
 console.log(games);
 

@@ -12,23 +12,22 @@ const Footer = () => {
           <button id="back" className="btn"
             onClick={() => navigate(-1)}
           >
-            ⬅️ Go Back 
+            <i class="fa-solid fa-left-long"></i> Go Back 
           </button>
         )}
         <h4 id="foot-title">
-          Made with{' '}
-            🎲
-          {' '}
-          <strong> Da Parlay Makers &copy; {year} </strong>
-            <div className="col-12 col-sm-12 col-md-8 mx-auto">
+         
+          <div className="col-12 col-sm-12 col-md-8 mx-auto">
             <a
 								className="px-3"
-								href="https://github.com/AASports89/build-a-bet"
+								href="https://github.com/AASports89/u-truck"
 								target="_blank"
 								rel="noopener noreferrer">
 								<img id="github" src='https://res.cloudinary.com/dhqsixgmo/image/upload/v1666484175/public/images/github-icon_mvuylu.png' alt="github icon"/>
 							</a>
+              {' '}
             </div>
+            <strong> AASports89 &copy; {year} </strong>
         </h4>
       </div>
     </footer>

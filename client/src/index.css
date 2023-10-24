@@ -24,7 +24,7 @@ body {
 body {
   height:100%;
   width:100%;
-  background: url('https://res.cloudinary.com/dhqsixgmo/image/upload/v1698104079/TRUCK_GIF_m5fm8v.gif') no-repeat center center fixed;
+  background: url('https://res.cloudinary.com/dhqsixgmo/image/upload/v1698108163/TRUCK_LOGO_ed7oz5.svg') no-repeat center center fixed;
  
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1293,7 +1293,7 @@ label form [type='radio'] {
 #title {
   text-decoration: none;
   cursor: pointer;
-  margin-top: -2%;
+  margin-top: 2%;
 }
 
 #main-title {
@@ -1325,16 +1325,15 @@ label form [type='radio'] {
   margin-top: 2%;
   color: whitesmoke;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 95%;
 }
 
 #github {
   width: 15%;
-  margin-top: 2%;
 }
 
 #github:hover {
-  border: 1.5px solid whitesmoke;
-  border-radius: 0.25em;
+  width: 20%;
 }
 
 #logger {
@@ -1347,6 +1346,10 @@ label form [type='radio'] {
   background-color: white;
   color: black;
   margin-top: 20%;
+}
+
+#truck {
+  color: whitesmoke;
 }
 
 #game-title {
