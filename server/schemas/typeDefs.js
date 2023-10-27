@@ -11,15 +11,15 @@ const typeDefs = gql`
 
   type Reservation {
     _id: ID
-    name: String
-    date: Date
-    win_choice: [Int]
+    title: String
+    date: String
     createdAt: String
     trucks: [Truck]!
   }
 
   type Truck {
     _id: ID
+    image: String
     truckModel: String
     rentalPrice: Int
   }
@@ -42,8 +42,8 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addReservation(name: String!, date: Date!, win_choice: Int!, truck: String!): Reservation
-    addTruck(truckModel: String!, rentalPrice: Int!): Truck
+    addReservation(title: String!, date: String!, truck: String!): Reservation
+    addTruck(image: String!, truckModel: String!, rentalPrice: Int!): Truck
     removeReservation(reservationId: ID!): Reservation
     removeTruck(reservationId: ID!, truckId: ID!): Reservation
   }

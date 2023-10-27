@@ -23,7 +23,7 @@ const Footer = () => {
 								href="https://github.com/AASports89/u-truck"
 								target="_blank"
 								rel="noopener noreferrer">
-								<img id="github" src='https://res.cloudinary.com/dhqsixgmo/image/upload/v1666484175/public/images/github-icon_mvuylu.png' alt="github icon"/>
+                                <i id="github" className="fa-brands fa-github"></i>
 							</a>
               {' '}
             </div>

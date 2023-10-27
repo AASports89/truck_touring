@@ -1304,8 +1304,8 @@ label form [type='radio'] {
   background-image: linear-gradient(rgb(126, 153, 251) 0%, rgb(6, 6, 129) 100%);
   box-shadow: 10px 0 0 5px rgb(3, 3, 107), 10px 0 10px 10px rgb(139, 139, 146);
   border-top: 1.5px solid whitesmoke;
-  height: 225px;
-  margin-bottom: -5%;
+  height: 125px;
+  position: bottom;
 }
 
 #back {
@@ -1329,11 +1329,12 @@ label form [type='radio'] {
 }
 
 #github {
-  width: 15%;
+  color: whitesmoke;
 }
 
 #github:hover {
-  width: 20%;
+  width: 150%;
+  color: black;
 }
 
 #logger {

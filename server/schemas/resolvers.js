@@ -28,7 +28,7 @@ const resolvers = {
       if (context.user) {
         return User.findOne({ _id: context.user._id }).populate("reservations");
       }
-      throw new AuthenticationError("Please login❗ " + <i id="error_icon" class="fa-solid fa-circle-exclamation"></i>);
+      throw new AuthenticationError("Please login❗");
     },
   },
 //CHANGE MODEL DATA//
@@ -43,13 +43,13 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('No user found with this login❗ ' + <i id="error_icon" class="fa-solid fa-circle-exclamation"></i>);
+        throw new AuthenticationError('No user found with this login❗');
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Invalid login credentials❗' + <i id="error_icon" class="fa-solid fa-circle-exclamation"></i>);
+        throw new AuthenticationError('Invalid login credentials❗');
       }
 
       const token = signToken(user);
@@ -57,11 +57,11 @@ const resolvers = {
       return { token, user };
     },
 //ADD RESERVATION//
-    addReservation: async (parent, { date, win_choice }, context) => {
+    addReservation: async (parent, { title, date }, context) => {
       if(context.user) {
         const reservation = await Reservation.create({
-          date, 
-          win_choice,
+          title,
+          date,
           username: context.user.username,
         });
 
@@ -75,16 +75,16 @@ const resolvers = {
         );
         return reservation;
       }
-      throw new AuthenticationError("Please login to create reservation request❗" + <i id="error_icon" class="fa-solid fa-circle-exclamation"></i>);
+      throw new AuthenticationError("Please login to create reservation request❗");
     },
 //ADD TRUCK//
-    addTruck: async (parent, { reservationId, truckModel, rentalPrice }, context) => {
+    addTruck: async (parent, { reservationId, image, truckModel, rentalPrice }, context) => {
       if (context.user) {
         return Reservation.findOneAndUpdate(
           { _id: reservationId },
           {
             $addToSet: {
-              trucks: { truckModel, rentalPrice, username: context.user.username },
+              trucks: { image, truckModel, rentalPrice, username: context.user.username },
             },
           },
           {
@@ -93,7 +93,7 @@ const resolvers = {
           }
         );
       }
-      throw new AuthenticationError("Please login to create reservation request❗ " + <i id="error_icon" class="fa-solid fa-circle-exclamation"></i>);
+      throw new AuthenticationError("Please login to create reservation request❗");
     },
 //DELETE RESERVATION//
     removeReservation: async (parent, { reservationId }, context) => {
@@ -109,7 +109,7 @@ const resolvers = {
         );
         return reservation;
       }
-      throw new AuthenticationError("Please login to delete reservation request❗ " + <i id="error_icon" class="fa-solid fa-circle-exclamation"></i>);
+      throw new AuthenticationError("Please login to delete reservation request❗");
     },
 //DELETE TRUCK//
     removeTruck: async (parent, { reservationId, truckId }, context) => {
@@ -126,7 +126,7 @@ const resolvers = {
         { new: true }
         );
       }
-      throw new AuthenticationError("Please login to update reservation request❗ " + <i id="error_icon" class="fa-solid fa-circle-exclamation"></i>);
+      throw new AuthenticationError("Please login to update reservation request❗");
     },
   },
 };

@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
       <nav id="navbar" className="navbar navbar-expand-lg navbar-light bg-light">
         <Link className="text-light" to="/">
-            <h1 id="title"><img id="build" src="https://res.cloudinary.com/dhqsixgmo/image/upload/v1698109311/TRCUK_TITLE_debvdm.svg" alt="Build A Bet"></img></h1>
+            <h1 id="title"><img id="build" src="https://res.cloudinary.com/dhqsixgmo/image/upload/v1698379989/SITE_NAV_TITLE_qwutim.svg" alt="U-Truck"></img></h1>
           </Link>
           <div className="row" id="links">
           {Auth.loggedIn() ? (
@@ -34,7 +34,6 @@ const Navbar = () => {
             <button className="btn" onClick={logout}>
                 Logout <i class="fa-solid fa-right-from-bracket"></i>
             </button>
-              {/* <div id="user-image" className="card-img-top"><img src={image.user} alt="profile"></img></div> */}
             </>
           ) : (
             <>

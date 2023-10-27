@@ -1,11 +1,18 @@
 import React from 'react';
+import { useQuery } from '@apollo/client';
+import { QUERY_TRUCKS } from '../utils/queries';
 
-import TruckList from '../components/TruckList';
-
-var date = (new Date()).toString().split(' ').splice(1,3).join(' ');
-document.write(date);
 
 const Home = () => {
+    const { loading, data } = useQuery(QUERY_TRUCKS);
+    const trucks = data?.trucks || [];
+    if (!trucks.length) {
+        return <h3></h3>;
+    }
+    console.log(trucks);
+    document.write(date);
+
+
 
   return (
     <main> 
@@ -13,7 +20,9 @@ const Home = () => {
       <h5 id="list-title">
         Reservations: {date} <i class="fa-regular fa-calendar-check"></i>
       </h5>
-          <TruckList />
+          {trucks.map((truck) => (
+              <div className="card mb-3" id="user-parlays">{truck}</div>
+          ))}
         </div>
     </main>
   );

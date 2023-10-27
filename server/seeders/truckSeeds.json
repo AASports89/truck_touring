@@ -1,22 +1,27 @@
 [
     {
+        "image": "https://res.cloudinary.com/dhqsixgmo/image/upload/v1698239173/Volvo_w4t1tv.jpg",
         "truckModel": "Volvo Pilisos V6000",
         "rentalPrice": 99.99
     },
     {
-        "truckModel": "PeterBilt Aziz X1",
+        "image": "https://res.cloudinary.com/dhqsixgmo/image/upload/v1698239173/peterbilt-trucks-on-pinterest-peterbilt-379-custom-big-rigs-and_n94y8y.jpg",
+        "truckModel": "PeterBilt FORD GRANADA XL",
         "rentalPrice": 1250.00
     },
     {
+        "image": "https://res.cloudinary.com/dhqsixgmo/image/upload/v1698239173/2021-International-Prostar-Crossing-under-the-bridge_ntoz0x.jpg",
         "truckModel": "WestTrux ZeeBeelCheek 4000",
         "rentalPrice": 499.99
     },
     {
+        "image": "https://res.cloudinary.com/dhqsixgmo/image/upload/v1698239173/suzuki-carry-van-main2_yusxhh.webp",
         "truckModel": "Suzuki Dumpster XS",
         "rentalPrice": "0.00"
     },
     {
-        "truckModel": "Mercedes ZigHeil",
+        "image": "https://res.cloudinary.com/dhqsixgmo/image/upload/v1698239173/mercedes-benz-genh2-truck-concept_100761898_ruive4.jpg",
+        "truckModel": "ZigHeil - Mercedes - ZigHeil",
         "rentalPrice": 399.99
     }
 ]

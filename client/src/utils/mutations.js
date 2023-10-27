@@ -25,13 +25,15 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_RESERVATION = gql`
-  mutation addReservation($reservationId: ID!) {
-    addReservation(reservationId: $reservationId) {
+  mutation addReservation($reservationId: ID!, $title: String!, $date: String!) {
+    addReservation(reservationId: $reservationId, title: $title, date: $date) {
       _id
+      title
       date
       createdAt
        truck {
         _id
+        image
         truckModel
         rentalPrice
       }
@@ -40,10 +42,11 @@ export const ADD_RESERVATION = gql`
 `;
 
 export const ADD_TRUCK = gql`
-  mutation addTruck ($reservationId: ID!, $truckModel: String!, $rentalPrice: Int!) {
-    addTruck(reservationId: $reservationId, truckModel: $truckModel, rentalPrice: $rentalPrice) {
+  mutation addTruck ($reservationId: ID!, $image: String!, $truckModel: String!, $rentalPrice: Int!) {
+    addTruck(reservationId: $reservationId, image: $image, truckModel: $truckModel, rentalPrice: $rentalPrice) {
       trucks {
         _id
+        image
         truckModel
         rentalPrice
       }

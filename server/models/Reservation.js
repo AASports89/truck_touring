@@ -3,6 +3,11 @@ const Truck = require('./Truck');
 const dateFormat = require('../utils/dateFormat');
 
 const reservationSchema = new Schema({
+    title:
+        {
+            type: String,
+            required: true,
+        },
     date: {
         type: Date,
         required: true,
@@ -12,12 +17,6 @@ const reservationSchema = new Schema({
         {
             type: Schema.Types.ObjectId,
             ref: "Truck"
-        },
-    ],
-    win_choice: [
-        {
-            type: Number,
-            required: true,
         },
     ],
     createdAt: {
