@@ -22,9 +22,10 @@ body {
 }
 
 body {
-  height:100%;
+  height:auto;
   width:100%;
-  background: url('https://res.cloudinary.com/dhqsixgmo/image/upload/v1698375176/SITE_BG_NEW_rvqwj8.svg') no-repeat center center fixed;
+  background: url('https://res.cloudinary.com/dhqsixgmo/image/upload/v1698385107/SITE_HOME_klbxfk.svg') no-repeat center center fixed;
+
  
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1306,6 +1307,7 @@ label form [type='radio'] {
   border-top: 1.5px solid whitesmoke;
   height: 125px;
   position: bottom;
+  display: inline-block;
 }
 
 #back {
@@ -1333,7 +1335,6 @@ label form [type='radio'] {
 }
 
 #github:hover {
-  width: 150%;
   color: black;
 }
 

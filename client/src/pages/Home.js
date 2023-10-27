@@ -10,15 +10,11 @@ const Home = () => {
         return <h3></h3>;
     }
     console.log(trucks);
-    document.write(date);
-
-
-
-  return (
+return (
     <main> 
       <div className="flex-row justify-center">
       <h5 id="list-title">
-        Reservations: {date} <i class="fa-regular fa-calendar-check"></i>
+        Reservations: {Date} <i class="fa-regular fa-calendar-check"></i>
       </h5>
           {trucks.map((truck) => (
               <div className="card mb-3" id="user-parlays">{truck}</div>
